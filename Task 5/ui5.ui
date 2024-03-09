@@ -1,0 +1,575 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1120</width>
+    <height>722</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">QMainWindow {
+    background-color: #f0f0f0; /* Set the background color for the main window */
+}
+
+QPushButton {
+    background-color: #3498db; /* Blue background color */
+    color: white; /* White text color */
+    border: 2px solid #3498db; /* Blue border */
+    padding: 8px 16px; /* Padding inside the button */
+    border-radius: 5px; /* Rounded corners */
+}
+
+QPushButton:hover {
+    background-color: #2980b9; /* Darker blue when hovered */
+}
+
+QLabel {
+    font-size: 14px; /* Set font size for labels */
+    color: #333; /* Dark text color */
+    border: 2px solid #ccc; /* Light gray border */
+    padding: 5px; /* Padding for labels */
+    border-radius: 3px; /* Rounded corners */
+}
+QLabel:hover {
+    background-color: #ecf0f1; /* Light gray background when hovered */
+}
+
+QLineEdit {
+    padding: 5px; /* Padding for line edit */
+    border: 1px solid #ccc; /* Light gray border */
+    border-radius: 3px; /* Rounded corners */
+}
+
+QWidget#spectro {
+    background-color: #fff; /* White background color for the spectrogram widget */
+    border: 1px solid #ccc; /* Light gray border */
+    border-radius: 5px; /* Rounded corners */
+}
+
+/* Scroll bar style */
+QScrollBar:vertical {
+    border: 1px solid #ccc; /* Light gray border */
+    background: #f0f0f0; /* Background color */
+    width: 10px; /* Width of the scroll bar */
+    margin: 0px 0px 0px 0px;
+}
+
+QScrollBar::handle:vertical {
+    background: #3498db; /* Blue handle color */
+    min-height: 20px; /* Minimum height of the handle */
+    border-radius: 5px; /* Rounded corners */
+}
+
+QScrollBar::add-line:vertical {
+    height: 0px;
+    subcontrol-position: bottom;
+    subcontrol-origin: margin;
+}
+
+QScrollBar::sub-line:vertical {
+    height: 0px;
+    subcontrol-position: top;
+    subcontrol-origin: margin;
+}
+
+/* Add more styles as needed for specific elements in your UI */
+</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QVBoxLayout" name="verticalLayout" stretch="5,5,0">
+    <item>
+     <layout class="QHBoxLayout" name="horizontalLayout" stretch="3,0,5">
+      <item>
+       <layout class="QVBoxLayout" name="verticalLayout_3" stretch="0,0,0,0">
+        <property name="sizeConstraint">
+         <enum>QLayout::SetDefaultConstraint</enum>
+        </property>
+        <item>
+         <widget class="QPushButton" name="record_btn">
+          <property name="text">
+           <string>Record</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="pattern_btn">
+          <property name="text">
+           <string>Record Reference</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QProgressBar" name="progressBar">
+          <property name="value">
+           <number>24</number>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout_2">
+          <item>
+           <widget class="QRadioButton" name="mode_1">
+            <property name="text">
+             <string>Mode 1</string>
+            </property>
+            <attribute name="buttonGroup">
+             <string notr="true">buttonGroup</string>
+            </attribute>
+           </widget>
+          </item>
+          <item>
+           <widget class="QRadioButton" name="mode_2">
+            <property name="text">
+             <string>Mode 2</string>
+            </property>
+            <attribute name="buttonGroup">
+             <string notr="true">buttonGroup</string>
+            </attribute>
+           </widget>
+          </item>
+         </layout>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <spacer name="horizontalSpacer">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>40</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item>
+       <widget class="QWidget" name="spectro" native="true">
+        <property name="styleSheet">
+         <string notr="true">background-color: rgb(171, 171, 171);
+</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item>
+     <layout class="QHBoxLayout" name="horizontalLayout_3" stretch="5,5,1,5,5">
+      <item>
+       <layout class="QVBoxLayout" name="verticalLayout_2">
+        <item>
+         <widget class="QLabel" name="label_5">
+          <property name="styleSheet">
+           <string notr="true">border-color: rgb(52, 152, 219);</string>
+          </property>
+          <property name="text">
+           <string>Scentence</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="label_2">
+          <property name="text">
+           <string>Let me in</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="label_4">
+          <property name="text">
+           <string>Grant me access</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="label_3">
+          <property name="text">
+           <string>Open middle door</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <layout class="QVBoxLayout" name="verticalLayout_4">
+        <property name="rightMargin">
+         <number>0</number>
+        </property>
+        <item>
+         <widget class="QLabel" name="label_6">
+          <property name="styleSheet">
+           <string notr="true">border-color: rgb(52, 152, 219);</string>
+          </property>
+          <property name="text">
+           <string>Percentage %</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="let_perc_label">
+          <property name="text">
+           <string>0%</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="grant_perc_label">
+          <property name="text">
+           <string>0%</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="open_perc_label">
+          <property name="text">
+           <string>0%</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <spacer name="horizontalSpacer_2">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>40</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item>
+       <layout class="QVBoxLayout" name="verticalLayout_8">
+        <item>
+         <widget class="QLabel" name="label_11">
+          <property name="styleSheet">
+           <string notr="true">border-color: rgb(52, 152, 219);</string>
+          </property>
+          <property name="text">
+           <string>Users</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout_7" stretch="0,5">
+          <item>
+           <widget class="QCheckBox" name="checkBox_1">
+            <property name="text">
+             <string/>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="label_names_1">
+            <property name="text">
+             <string>amir</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout_12" stretch="0,5">
+          <item>
+           <widget class="QCheckBox" name="checkBox_2">
+            <property name="text">
+             <string/>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="label_names_2">
+            <property name="text">
+             <string>emad</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout_8" stretch="0,5">
+          <item>
+           <widget class="QCheckBox" name="checkBox_3">
+            <property name="text">
+             <string/>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="label_names_3">
+            <property name="text">
+             <string>farah</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout_11" stretch="0,5">
+          <item>
+           <widget class="QCheckBox" name="checkBox_4">
+            <property name="text">
+             <string/>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="label_names_4">
+            <property name="text">
+             <string>khaled</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout_10" stretch="0,5">
+          <item>
+           <widget class="QCheckBox" name="checkBox_5">
+            <property name="text">
+             <string/>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="label_names_5">
+            <property name="text">
+             <string>merna</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout_5" stretch="0,5">
+          <item>
+           <widget class="QCheckBox" name="checkBox_6">
+            <property name="text">
+             <string/>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="label_names_6">
+            <property name="text">
+             <string>mohamed</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout_9" stretch="0,5">
+          <item>
+           <widget class="QCheckBox" name="checkBox_7">
+            <property name="text">
+             <string/>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="label_names_7">
+            <property name="text">
+             <string>nabil</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout_4" stretch="0,5">
+          <item>
+           <widget class="QCheckBox" name="checkBox_8">
+            <property name="text">
+             <string/>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="label_names_8">
+            <property name="text">
+             <string>osama</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <layout class="QVBoxLayout" name="verticalLayout_7">
+        <item>
+         <widget class="QLabel" name="label_12">
+          <property name="styleSheet">
+           <string notr="true">border-color: rgb(52, 152, 219);</string>
+          </property>
+          <property name="text">
+           <string>Percentage %</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="label_p_1">
+          <property name="text">
+           <string>0</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="label_p_2">
+          <property name="text">
+           <string>0</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="label_p_3">
+          <property name="text">
+           <string>0</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="label_p_4">
+          <property name="text">
+           <string>0</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="label_p_5">
+          <property name="text">
+           <string>0</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="label_p_6">
+          <property name="text">
+           <string>0</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="label_p_7">
+          <property name="text">
+           <string>0</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="label_p_8">
+          <property name="text">
+           <string>0</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+     </layout>
+    </item>
+    <item>
+     <widget class="QLabel" name="out_put_label">
+      <property name="styleSheet">
+       <string notr="true">QMainWindow {
+    background-color: #f0f0f0; /* Set the background color for the main window */
+}
+
+QPushButton {
+    background-color: #3498db; /* Blue background color */
+    color: white; /* White text color */
+    border: 2px solid #3498db; /* Blue border */
+    padding: 8px 16px; /* Padding inside the button */
+    border-radius: 5px; /* Rounded corners */
+}
+
+QPushButton:hover {
+    background-color: #2980b9; /* Darker blue when hovered */
+}
+
+QLabel {
+    font-size: 30px; /* Set font size for labels */
+    color: #333; /* Dark text color */
+    border: 1px solid #ccc; /* Light gray border */
+    padding: 5px; /* Padding for labels */
+    border-radius: 3px; /* Rounded corners */
+}
+
+QLineEdit {
+    padding: 5px; /* Padding for line edit */
+    border: 1px solid #ccc; /* Light gray border */
+    border-radius: 3px; /* Rounded corners */
+}
+
+QWidget#spectro {
+    background-color: #fff; /* White background color for the spectrogram widget */
+    border: 1px solid #ccc; /* Light gray border */
+    border-radius: 5px; /* Rounded corners */
+}
+
+/* Scroll bar style */
+QScrollBar:vertical {
+    border: 1px solid #ccc; /* Light gray border */
+    background: #f0f0f0; /* Background color */
+    width: 10px; /* Width of the scroll bar */
+    margin: 0px 0px 0px 0px;
+}
+
+QScrollBar::handle:vertical {
+    background: #3498db; /* Blue handle color */
+    min-height: 20px; /* Minimum height of the handle */
+    border-radius: 5px; /* Rounded corners */
+}
+
+QScrollBar::add-line:vertical {
+    height: 0px;
+    subcontrol-position: bottom;
+    subcontrol-origin: margin;
+}
+
+QScrollBar::sub-line:vertical {
+    height: 0px;
+    subcontrol-position: top;
+    subcontrol-origin: margin;
+}
+
+/* Add more styles as needed for specific elements in your UI */
+
+</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1120</width>
+     <height>26</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources/>
+ <connections/>
+ <buttongroups>
+  <buttongroup name="buttonGroup"/>
+ </buttongroups>
+</ui>
