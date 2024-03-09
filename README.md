@@ -49,10 +49,10 @@ The Security Voice-code Access software component provides robust access control
 
 ## Preview:
 
-![Screenshot 1](Task%205/screenshots/1.png)
-![Screenshot 2](Task%205/screenshots/2.png)
-![Screenshot 3](Task%205/screenshots/3.png)
-![Screenshot 4](Task%205/screenshots/4.png)
+![Screenshot 1](Task%205/ss/1.png)
+![Screenshot 2](Task%205/ss/2.png)
+![Screenshot 3](Task%205/ss/3.png)
+![Screenshot 4](Task%205/ss/4.png)
 
 
 
